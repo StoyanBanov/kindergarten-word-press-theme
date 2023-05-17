@@ -12,6 +12,45 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
+
+                <?php query_posts('showposts=5');
+                $i = 0; ?>
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <div class="carousel-item <?php if ($i == 0) {
+                                                        echo 'active';
+                                                    }
+                                                    $i++;
+                                                    ?>">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h1>
+                                            <?php the_title(); ?> <br />
+                                            <span>
+                                                <?php echo 'Secondary title todo'; ?>
+                                            </span>
+                                        </h1>
+                                        <p>
+                                            <?php echo the_content(); ?>
+                                        </p>
+                                        <div class="btn-box">
+                                            <a href="<?php the_permalink(); ?>" class="btn-1">
+                                                Read More
+                                            </a>
+                                            <a href="" class="btn-2">
+                                                Contact us
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    endwhile;
+                endif;
+                ?>
+
+                <!--
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-md-6">
@@ -40,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-md-6">
@@ -67,91 +107,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="detail-box">
-                                <h1>
-                                    A Perfect Learning Center <br />
-                                    <span>
-                                        For Your Kids
-                                    </span>
-                                </h1>
-                                <p>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal distribution of letters, as
-                                </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn-1">
-                                        Read More
-                                    </a>
-                                    <a href="" class="btn-2">
-                                        Contact us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="detail-box">
-                                <h1>
-                                    A Perfect Learning Center <br />
-                                    <span>
-                                        For Your Kids
-                                    </span>
-                                </h1>
-                                <p>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal distribution of letters, as
-                                </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn-1">
-                                        Read More
-                                    </a>
-                                    <a href="" class="btn-2">
-                                        Contact us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="detail-box">
-                                <h1>
-                                    A Perfect Learning Center <br />
-                                    <span>
-                                        For Your Kids
-                                    </span>
-                                </h1>
-                                <p>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal distribution of letters, as
-                                </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn-1">
-                                        Read More
-                                    </a>
-                                    <a href="" class="btn-2">
-                                        Contact us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>-->
             </div>
         </div>
 
@@ -520,7 +476,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="img-box">
-                    <img src="images/about-img.jpg" alt="">
+                    <img src="<?php bloginfo('template_directory'); ?>/images/about-img.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-5 col-lg-4">
@@ -566,7 +522,7 @@
                 <div class="carousel-item active">
                     <div class="client_container layout_padding">
                         <div class="img-box">
-                            <img src="images/client.png" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/client.png" alt="">
                         </div>
                         <div class="detail-box">
                             <h4>
@@ -591,7 +547,7 @@
                 <div class="carousel-item">
                     <div class="client_container layout_padding">
                         <div class="img-box">
-                            <img src="images/client.png" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/client.png" alt="">
                         </div>
                         <div class="detail-box">
                             <h4>
@@ -609,14 +565,14 @@
                                 the
                                 middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
                             </p>
-                            <img src="images/quote.png" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/quote.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="client_container layout_padding">
                         <div class="img-box">
-                            <img src="images/client.png" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/client.png" alt="">
                         </div>
                         <div class="detail-box">
                             <h4>
@@ -634,7 +590,7 @@
                                 the
                                 middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
                             </p>
-                            <img src="images/quote.png" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/quote.png" alt="">
                         </div>
                     </div>
                 </div>

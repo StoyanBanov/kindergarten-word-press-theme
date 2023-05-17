@@ -89,8 +89,8 @@
 </section>
 <!-- footer section -->
 
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/bootstrap.js"></script>
 
 <script>
     // This example adds a marker to indicate the position of Bondi Beach in Sydney,
@@ -104,7 +104,7 @@
             }
         });
 
-        var image = "images/maps-and-flags.png";
+        var image = "<?php bloginfo('template_directory'); ?>/images/maps-and-flags.png";
         var beachMarker = new google.maps.Marker({
             position: {
                 lat: 40.645037,

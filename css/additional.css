@@ -1,0 +1,22 @@
+.navbar-nav li {
+    margin-bottom: -1px;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    text-align: center;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.navbar-nav li a {
+    padding: 10px 30px;
+    color: #fefdfc;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li a:focus {
+    color: rgba(0, 0, 0, 0.7);
+}

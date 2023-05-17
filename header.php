@@ -25,6 +25,8 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php bloginfo('template_directory'); ?>/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/additional.css" />
+
     <!-- responsive style -->
     <link href="<?php bloginfo('template_directory'); ?>/css/responsive.css" rel="stylesheet" />
 </head>
@@ -35,8 +37,8 @@
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.png" alt="" />
+                    <a class="navbar-brand" href="./index.php">
+                        <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="" />
                         <span>
                             Brighton
                         </span>
@@ -47,6 +49,27 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+
+
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location'  => 'top-menu',
+                                'menu'            => 'navigation',
+                                'menu_class'      => 'navbar-nav  ',
+                                'menu_id'         => 'idm',
+                                'echo'            => true,
+                                'fallback_cb'     => 'wp_page_menu',
+                                'before'          => '',
+                                'after'           => '',
+                                'link_before'     => '',
+                                'link_after'      => '',
+                                'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                                'depth'           => 0,
+                                'walker'          => ''
+                            ));
+                            ?>
+
+                            <!--
                             <ul class="navbar-nav  ">
                                 <li class="nav-item active">
                                     <a class="nav-link" href="index.html">
@@ -62,6 +85,7 @@
                                     <a class="nav-link" href="contact.html"> Contact us</a>
                                 </li>
                             </ul>
+                        -->
                         </div>
                     </div>
                 </nav>
