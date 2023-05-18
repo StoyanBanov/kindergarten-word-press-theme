@@ -13,7 +13,7 @@
             </ol>
             <div class="carousel-inner">
 
-                <?php query_posts('showposts=5');
+                <?php query_posts('showposts=5&cat=3');
                 $i = 0; ?>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="carousel-item <?php if ($i == 0) {
@@ -31,7 +31,10 @@
                                             </span>
                                         </h1>
                                         <p>
-                                            <?php echo the_content(); ?>
+                                            <?php the_content(); ?>
+                                            <a href="<?php the_permalink(); ?>" class="btn-1">
+                                                [&hellip;]
+                                            </a>
                                         </p>
                                         <div class="btn-box">
                                             <a href="<?php the_permalink(); ?>" class="btn-1">

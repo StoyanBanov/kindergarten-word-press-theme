@@ -130,6 +130,7 @@
         document.getElementById("myNav").style.width = "0%";
     }
 </script>
+<?php wp_footer(); ?>
 </body>
 
 </html>

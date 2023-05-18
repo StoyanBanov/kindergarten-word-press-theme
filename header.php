@@ -37,7 +37,7 @@
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="./index.php">
+                    <a class="navbar-brand" href="../index.php">
                         <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="" />
                         <span>
                             Brighton
@@ -90,5 +90,6 @@
                     </div>
                 </nav>
             </div>
+            <?php wp_head(); ?>
         </header>
         <!-- end header section -->
