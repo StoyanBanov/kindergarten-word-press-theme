@@ -121,7 +121,7 @@
 
 <!-- offer section -->
 
-<section class="offer_section hero_next_section-margin layout_padding">
+<section style="background-color: #f7f7f7;" class="offer_section hero_next_section-margin layout_padding">
     <div class="container">
         <div class="heading_container">
             <h2>
@@ -134,6 +134,39 @@
             </p>
         </div>
         <div class="row">
+
+
+
+            <?php query_posts('showposts=6&cat=5'); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                    <div class="col-md-6">
+                        <div class="content-box">
+                            <div class="img-box">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail();
+                                }
+                                ?>
+                            </div>
+                            <div class="detail-box">
+                                <h6>
+                                    <?php the_title(); ?>
+                                </h6>
+                                <p>
+                                    <?php the_content(); ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+            <?php
+                endwhile;
+            endif;
+            ?>
+
+
+            <!--
             <div class="col-md-6">
                 <div class="content-box">
                     <div class="img-box">
@@ -467,49 +500,13 @@
                     </div>
                 </div>
             </div>
+            -->
+
         </div>
     </div>
 </section>
 
 <!-- end offer section -->
-
-<!-- about section -->
-<section class="about_section ">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="img-box">
-                    <img src="<?php bloginfo('template_directory'); ?>/images/about-img.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-5 col-lg-4">
-                <div class="detail-box">
-                    <div class="heading_container">
-                        <h2>
-                            A Few words about us
-                        </h2>
-                    </div>
-                    <p>
-                        It is a long established fact that a reader will be distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                        of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                        desktop publishing packages and web
-                    </p>
-                    <div>
-                        <a href="">
-                            Read More
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</section>
-
-<!-- end about section -->
 
 <!-- client section -->
 
@@ -522,6 +519,42 @@
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
+
+
+                <?php query_posts('showposts=6&cat=4'); ?>
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                        <div class="carousel-item active">
+                            <div class="client_container layout_padding">
+                                <div class="img-box">
+                                    <?php
+                                    if (has_post_thumbnail()) {
+                                        the_post_thumbnail();
+                                    }
+                                    ?>
+                                </div>
+                                <div class="detail-box">
+                                    <h4>
+                                        <?php the_title() ?>
+                                    </h4>
+                                    <h6>
+                                        customer
+                                    </h6>
+                                    <p>
+                                        <?php the_content() ?>
+                                    </p>
+                                    <img src="images/quote.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                <?php
+                    endwhile;
+                endif;
+                ?>
+
+
+                <!--
                 <div class="carousel-item active">
                     <div class="client_container layout_padding">
                         <div class="img-box">
@@ -597,6 +630,9 @@
                         </div>
                     </div>
                 </div>
+            -->
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="sr-only">Previous</span>
