@@ -3,7 +3,7 @@
     <div class="container">
         <div class="info_form">
 
-            <div class="row">
+            <!--<div class="row">
                 <div class="offset-lg-3 col-lg-3">
                     <h5 class="form_heading">
                         Newsletter
@@ -17,63 +17,32 @@
                         </button>
                     </form>
                 </div>
-            </div>
+            </div>-->
 
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="info_logo">
-                    <div>
-                        <a href="">
-                            <img src="images/logo.png" alt="" />
-                            <span>
-                                Brighton
-                            </span>
-                        </a>
+
+            <?php query_posts('showposts=4&cat=84'); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <div class="col-md-3" style="margin-left: 20px;">
+                        <div class="info_logo">
+                            <div>
+                                <h3 style="text-transform: uppercase;">
+                                    <?php the_title(); ?>
+                                </h3>
+                            </div>
+                            <p>
+                                <?php the_content(); ?>
+                            </p>
+                        </div>
                     </div>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available,
-                        but the majority have suffered alteration
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="info_links ">
-                    <h5>
-                        Contact Us
-                    </h5>
-                    <p class="pr-0 pr-md-4 pr-lg-5">
-                        Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                        odio. Quisque volutpat mattis eros
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="info_insta">
-                    <h5>
-                        INFORMATION
-                    </h5>
-                    <p class="pr-0 pr-md-4 pr-md-5">
-                        Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                        odio. Quisque volutpat mattis eros
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="pl-0 pl-lg-5 pl-md-4">
-                    <h5>
-                        MY ACCOUNT
+            <?php
+                endwhile;
+            endif;
+            ?>
 
-                    </h5>
-                    <p>
-                        Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                        odio. Quisque volutpat mattis eros
-                    </p>
-
-                </div>
-            </div>
         </div>
     </div>
 </section>

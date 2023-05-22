@@ -37,16 +37,13 @@
                                         </h1>
                                         <p>
                                             <?php the_content(); ?>
-                                            <a href="<?php the_permalink(); ?>" class="btn-1">
-                                                [&hellip;]
-                                            </a>
                                         </p>
                                         <div class="btn-box">
                                             <a href="<?php the_permalink(); ?>" class="btn-1">
-                                                Read More
+                                                Повече
                                             </a>
-                                            <a href="" class="btn-2">
-                                                Contact us
+                                            <a href="<?php bloginfo('template_directory'); ?>/контакти" class="btn-2">
+                                                Свържете се
                                             </a>
                                         </div>
                                     </div>
@@ -101,12 +98,10 @@
     <div class="container">
         <div class="heading_container">
             <h2>
-                what we offer
+                Какво предлагаме
             </h2>
             <p>
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page when looking at its layout. The point
-                of using Lorem
+                Прдлжение тук
             </p>
         </div>
         <div class="row">
@@ -179,7 +174,7 @@
     <div class="container layout_padding2-top">
         <div class="heading_container">
             <h2>
-                Parent’s Feedback
+                Обратна връзка от родители
             </h2>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -217,7 +212,7 @@
                                     <p>
                                         <?php the_content() ?>
                                     </p>
-                                    <img src="images/quote.png" alt="">
+                                    <img src="<?php bloginfo('template_directory'); ?>/images/quote.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -327,9 +322,9 @@
     <div class="container ">
         <div class="heading_container ">
             <h2 class="">
-                Request
+                Свържете се
                 <span>
-                    A call Back
+                    с нас
                 </span>
 
             </h2>
@@ -338,7 +333,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
-                <form action="#">
+                <?php echo do_shortcode('[contact-form-7 id="23" title="Форма за контакти 1"]'); ?>
+                <!--<form action="#">
                     <div>
                         <input type="text" placeholder="Name" />
                     </div>
@@ -356,12 +352,13 @@
                             SEND
                         </button>
                     </div>
-                </form>
+                </form>-->
             </div>
             <div class="col-md-6">
                 <!-- map section -->
                 <div class="map_section">
-                    <div id="map" class="w-100 h-100"></div>
+                    <?php echo do_shortcode('[wpgmza id="1"]'); ?>
+                    <!--<div id="map" class="w-100 h-100"></div>-->
                 </div>
 
                 <!-- end map section -->

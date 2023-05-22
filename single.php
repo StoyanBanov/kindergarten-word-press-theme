@@ -8,8 +8,10 @@ if (have_posts()) {
         the_post();
 ?>
 
-        <h1><?php the_title() ?></h1>
-        <p><?php the_content() ?></p>
+        <div style="display:flex; flex-direction: column; align-items: center; height: 80%">
+            <h1 style="color:white"><?php the_title() ?></h1>
+            <p><?php the_content() ?></p>
+        </div>
 <?php
     }
 }
