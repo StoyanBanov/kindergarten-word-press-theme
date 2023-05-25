@@ -29,6 +29,7 @@
 
     <!-- responsive style -->
     <link href="<?php bloginfo('template_directory'); ?>/css/responsive.css" rel="stylesheet" />
+    <script src="<?php bloginfo('template_directory'); ?>/js/my-js.js" defer></script>
 </head>
 
 <body>
